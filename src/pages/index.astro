@@ -1,0 +1,48 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro'
+import siteConfig from '@/site-config'
+---
+
+<BaseLayout description={siteConfig.description}>
+  <article class="prose">
+    <h1 class="text-title">Vitesse theme</h1>
+    <p>Vitesse theme for Astro, supports Vue and UnoCSS.</p>
+    <p>
+      A minimal, SEO-riendly portfolio and blog theme for Astro. It's inspired
+      by <a target="_blank" href="https://antfu.me">antfu.me</a>.
+    </p>
+    <p>
+      The goal of this theme is to
+      <b>make complex things as simple as possible</b>
+      . So, the core of this theme is the content, and the other elements are just
+      auxiliary.
+    </p>
+    <hr class="hr-line" />
+    <p>Find me on</p>
+    <p class="flex gap-x-4 gap-y-2 flex-wrap">
+      {
+        siteConfig.socialLinks.map((link) => (
+          <a
+            aria-label={link.text}
+            href={link.href}
+            target="_blank"
+            class="prose-link"
+          >
+            <i class:list={[link.icon]} />
+            {link.text}
+          </a>
+        ))
+      }
+    </p>
+    <p>
+      If you have any questions, please email me at
+      <a
+        prose-link
+        aria-label={siteConfig.email}
+        href={`mailto:${siteConfig.email}`}
+      >
+        {siteConfig.email}
+      </a>.
+    </p>
+  </article>
+</BaseLayout>
