@@ -4,6 +4,10 @@ export const siteConfig = {
   subtitle: '',
   description: '',
   email: 'devjesuspinar@gmail.com',
+  image: {
+    src: 'https://avatars.githubusercontent.com/u/89412063',
+    alt: 'Website Main Image',
+  },
   socialLinks: [
     {
       text: 'GitHub',
