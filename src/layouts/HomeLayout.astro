@@ -1,0 +1,21 @@
+---
+import { ViewTransitions } from 'astro:transitions'
+import BaseHead from '@/components/BaseHead.astro'
+import Header from '@/components/Header.vue'
+
+const { ...head } = Astro.props
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <BaseHead {...head} />
+    <ViewTransitions />
+  </head>
+  <body>
+    <Header client:load />
+    <main>
+      <slot />
+    </main>
+  </body>
+</html>

@@ -1,48 +1,67 @@
 ---
-import BaseLayout from '@/layouts/BaseLayout.astro'
+import HomeLayout from '@/layouts/HomeLayout.astro'
 import siteConfig from '@/site-config'
+import Meteors from '@/components/Meteors.astro'
+import Stars from '@/components/Stars.astro'
 ---
 
-<BaseLayout description={siteConfig.description}>
-  <article class="prose">
-    <h1 class="text-title">Vitesse theme</h1>
-    <p>Vitesse theme for Astro, supports Vue and UnoCSS.</p>
-    <p>
-      A minimal, SEO-riendly portfolio and blog theme for Astro. It's inspired
-      by <a target="_blank" href="https://antfu.me">antfu.me</a>.
-    </p>
-    <p>
-      The goal of this theme is to
-      <b>make complex things as simple as possible</b>
-      . So, the core of this theme is the content, and the other elements are just
-      auxiliary.
-    </p>
-    <hr class="hr-line" />
-    <p>Find me on</p>
-    <p class="flex gap-x-4 gap-y-2 flex-wrap">
-      {
-        siteConfig.socialLinks.map((link) => (
-          <a
-            aria-label={link.text}
-            href={link.href}
-            target="_blank"
-            class="prose-link"
+<HomeLayout description={siteConfig.description}>
+  <!-- Light Mode: Particles -->
+  <div class="absolute inset-0 block dark:hidden">
+    <div id="particles1" class="fixed inset-0"></div>
+    <div id="particles2" class="fixed inset-0"></div>
+    <div id="particles3" class="fixed inset-0"></div>
+  </div>
+
+  <!-- Dark Theme: Stars -->
+  <div class="absolute inset-0 bg-main hidden dark:block">
+    <div id="stars1" class="fixed inset-0"></div>
+    <div id="stars2" class="fixed inset-0"></div>
+    <div id="stars3" class="fixed inset-0"></div>
+  </div>
+
+  <!-- Dark Theme: Twinkling Stars / Metors -->
+  <div id="galaxy" class="fixed inset-0">
+    <div class="hidden dark:block">
+      <Stars />
+      <Meteors />
+    </div>
+  </div>
+
+  <script is:inline src="/js/bg.js"></script>
+
+  <!-- HERO -->
+  <section class="relative h-screen w-full">
+    <div class="absolute h-full w-full flex items-center justify-center">
+      <div class="relative w-full h-full flex items-center justify-center">
+        <div class="p-5 text-center">
+          <p class="text-lg md:text-xl lg:text-2xl font-semibold opacity-75">
+            Hello, I am ...
+          </p>
+          <p
+            class="text-2xl md:text-3xl lg:text-4xl font-bold uppercase text-black dark:text-white"
           >
-            <i class:list={[link.icon]} />
-            {link.text}
-          </a>
-        ))
-      }
-    </p>
-    <p>
-      If you have any questions, please email me at
-      <a
-        prose-link
-        aria-label={siteConfig.email}
-        href={`mailto:${siteConfig.email}`}
-      >
-        {siteConfig.email}
-      </a>.
-    </p>
-  </article>
-</BaseLayout>
+            Jesus Pinar
+          </p>
+          <p class="text-sm md:text-base lg:text-lg opacity-75">
+            Software developer.
+          </p>
+          <div id="ctaButtons" class="flex flex-wrap gap-4 justify-center mt-5">
+            <a
+              href="/blog"
+              class="py-2 px-4 truncate rounded text-xs md:text-sm lg:text-base border border-black/25 dark:border-white/25 hover:bg-black/5 hover:dark:bg-white/15 blend"
+            >
+              Read my blog
+            </a>
+            <a
+              href="/projects"
+              class="py-2 px-4 rounded truncate text-xs md:text-sm lg:text-base bg-black dark:bg-white text-white dark:text-black hover:opacity-75 blend"
+            >
+              View my work
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</HomeLayout>

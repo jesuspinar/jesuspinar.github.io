@@ -1,0 +1,54 @@
+/**
+ * Meteors
+ */
+#meteors .shower {
+  position: absolute;
+  inset: 0;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100vw;
+  aspect-ratio: 1 / 1;
+}
+
+#meteors .meteor {
+  animation: meteor 3s ease-in-out forwards;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 1px;
+  height: 75vh;
+  background: linear-gradient(to bottom, white, transparent);
+}
+
+#meteors .shower.ur {
+  transform: rotate(45deg);
+}
+
+#meteors .shower.dr {
+  transform: rotate(135deg);
+}
+
+#meteors .shower.dl {
+  transform: rotate(225deg);
+}
+
+#meteors .shower.ul {
+  transform: rotate(315deg);
+}
+
+@keyframes meteor {
+  0% {
+    opacity: 0;
+    transform: translateY(200%);
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+    transform: translateY(0);
+  }
+}
