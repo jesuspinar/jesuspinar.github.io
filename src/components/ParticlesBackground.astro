@@ -1,0 +1,56 @@
+---
+import { getRandom } from '@/utils/math'
+
+function generateParticles(n: number) {
+  let value = `${getRandom(2560)}px ${getRandom(2560)}px #000`
+  for (let i = 2; i <= n; i++) {
+    value += `, ${getRandom(2560)}px ${getRandom(2560)}px #000`
+  }
+  return value
+}
+
+const particlesSmall = generateParticles(1000)
+const particlesMedium = generateParticles(500)
+const particlesLarge = generateParticles(250)
+---
+
+<div class="absolute inset-0 block dark:hidden">
+  <div id="particles1" class="fixed inset-0"></div>
+  <div id="particles2" class="fixed inset-0"></div>
+  <div id="particles3" class="fixed inset-0"></div>
+</div>
+
+<style
+  define:vars={{ boxShadow: particlesSmall, particlesMedium, particlesLarge }}
+>
+  #particles1 {
+    width: 1px;
+    height: 1px;
+    border-radius: 50%;
+    box-shadow: var(--particlesSmall);
+    animation: animateParticle 50s linear infinite;
+  }
+  #particles2 {
+    width: 1.5px;
+    height: 1.5px;
+    border-radius: 50%;
+    box-shadow: var(--particlesMedium);
+    animation: animateParticle 100s linear infinite;
+  }
+  #particles3 {
+    width: 2px;
+    height: 2px;
+    border-radius: 50%;
+    box-shadow: var(--particlesLarge);
+    animation: animateParticle 150s linear infinite;
+  }
+  @keyframes animateParticle {
+    from {
+      transform: translateY(0px);
+    }
+
+    to {
+      transform: translateY(-2000px);
+    }
+  }
+</style>

@@ -1,0 +1,42 @@
+---
+import { getRandom } from '@/utils/math'
+
+function generateStars(n: number) {
+  let value = `${getRandom(2560)}px ${getRandom(2560)}px #fff`
+  for (let i = 2; i <= n; i++) {
+    value += `, ${getRandom(2560)}px ${getRandom(2560)}px #fff`
+  }
+  return value
+}
+
+const starsSmall = generateStars(1000)
+const starsMedium = generateStars(750)
+const starsLarge = generateStars(250)
+---
+
+<div class="absolute inset-0 bg-main hidden dark:block">
+  <div id="stars1" class="fixed inset-0"></div>
+  <div id="stars2" class="fixed inset-0"></div>
+  <div id="stars3" class="fixed inset-0"></div>
+</div>
+
+<style define:vars={{ boxShadow: starsSmall, starsMedium, starsLarge }}>
+  #stars1 {
+    width: 1px;
+    height: 1px;
+    box-shadow: var(--starsSmall);
+    border-radius: 50%;
+  }
+  #stars2 {
+    width: 1.5px;
+    height: 1.5px;
+    box-shadow: var(--starsMedium);
+    border-radius: 50%;
+  }
+  #stars3 {
+    width: 2px;
+    height: 2px;
+    box-shadow: var(--starsLarge);
+    border-radius: 50%;
+  }
+</style>
