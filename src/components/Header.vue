@@ -60,17 +60,12 @@ onMounted(() => {
 
 function toggleNavDrawer() {
   const drawer = document.querySelector('.nav-drawer') as HTMLElement
-  const mask = document.querySelector('.nav-drawer-mask') as HTMLElement
-  if (!drawer || !mask)
+  if (!drawer)
     return
-  if (drawer.style.transform === `translateX(0%)`) {
-    drawer.style.transform = `translateX(-100%)`
-    mask.style.display = `none`
-  }
-  else {
-    drawer.style.transform = `translateX(0%)`
-    mask.style.display = `block`
-  }
+  if (drawer.style.transform === `translateY(0%)`)
+    drawer.style.transform = `translateY(-100%)`
+  else
+    drawer.style.transform = `translateY(0%)`
 }
 </script>
 
@@ -79,7 +74,7 @@ function toggleNavDrawer() {
     id="header" :class="{ 'header-bg-blur': scroll > 20 }"
     class="!fixed bg-transparent z-899 w-screen h-20 px-6 flex justify-between items-center relative"
   >
-    <div class="flex items-center h-full">
+    <div class="flex items-center w-full sm:w-auto sm:justify-start justify-between">
       <a href="/" mr-6 aria-label="Header Logo Image">
         <img width="32" height="32" :src="siteConfig.header.logo.src" :alt="siteConfig.header.logo.alt">
       </a>
@@ -91,38 +86,52 @@ function toggleNavDrawer() {
           {{ link.text }}
         </a>
       </nav>
-      <div sm:hidden h-full flex items-center @click="toggleNavDrawer()">
-        <menu i-ri-menu-2-fill />
+      <div class="sm:hidden flex items-center b-1 p-2 rounded-full" @click="toggleNavDrawer()">
+        <menu i-ri:menu-fill />
       </div>
     </div>
-    <div class="flex gap-x-6">
+    <div class="sm:flex hidden gap-x-6">
       <a
         v-for="link in socialLinks" :key="link.text" :aria-label="`${link.text}`" :class="link.icon" nav-link
         :target="getLinkTarget(link.href)" :href="link.href"
       />
-
       <a nav-link target="_blank" href="/rss.xml" i-ri-rss-line aria-label="RSS" />
       <ThemeToggle />
     </div>
   </header>
-  <nav
-    class="nav-drawer sm:hidden"
-  >
-    <i i-ri-menu-2-fill />
-    <a
-      v-for="link in navLinks" :key="link.text" :aria-label="`${link.text}`" :target="getLinkTarget(link.href)"
-      nav-link :href="link.href" @click="toggleNavDrawer()"
-    >
-      {{ link.text }}
-    </a>
+
+  <nav class="nav-drawer sm:hidden">
+    <div class="flex justify-between items-center w-full">
+      <a href="/" mr-6 aria-label="Header Logo Image">
+        <img width="32" height="32" :src="siteConfig.header.logo.src" :alt="siteConfig.header.logo.alt">
+      </a>
+      <i i-ri-close-fill @click="toggleNavDrawer()" />
+    </div>
+    <div class="flex flex-col justify-center h-full">
+      <div class="flex flex-col justify-center items-center gap-4 w-full">
+        <a
+          v-for="link in navLinks" :key="link.text" :aria-label="`${link.text}`" :target="getLinkTarget(link.href)"
+          nav-link :href="link.href" class="text-center" @click="toggleNavDrawer()"
+        >
+          {{ link.text }}
+        </a>
+      </div>
+      <div class="flex justify-center items-center gap-6 mt-6">
+        <a
+          v-for="link in socialLinks" :key="link.text" :aria-label="`${link.text}`" :class="link.icon" nav-link
+          :target="getLinkTarget(link.href)" :href="link.href"
+        />
+        <a nav-link target="_blank" href="/rss.xml" i-ri-rss-line aria-label="RSS" />
+        <ThemeToggle />
+      </div>
+    </div>
   </nav>
-  <div class="nav-drawer-mask" @click="toggleNavDrawer()" />
 </template>
 
 <style scoped>
 .header-hide {
   transform: translateY(-100%);
-  transition: transform 0.4s ease;
+  transition: transform 0.6s ease;
 }
 
 .header-bg-blur {
@@ -130,21 +139,8 @@ function toggleNavDrawer() {
 }
 
 .nav-drawer {
-  transform: translateX(-100%);
-  --at-apply: box-border fixed h-screen z-999 left-0 top-0 min-w-32vw max-w-50vw
-    bg-main p-6 text-lg flex flex-col gap-5 transition-all;
-}
-
-.nav-drawer-mask {
-  display: none;
-  --at-apply: transition-all;
-  content: '';
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  background: rgba(0, 0, 0, 0.5);
-  z-index: 998;
+  transform: translateY(-100%);
+  --at-apply: box-border fixed h-screen z-999 left-0 top-0 w-100vw bg-main p-6
+    text-lg flex flex-col gap-5 text-center transition-all;
 }
 </style>
