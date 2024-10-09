@@ -6,7 +6,7 @@ export const siteConfig = {
   email: 'devjesuspinar@gmail.com',
   image: {
     src: 'https://avatars.githubusercontent.com/u/89412063',
-    alt: 'Website Main Image',
+    alt: 'A cool rocket',
   },
   socialLinks: [
     {
@@ -24,7 +24,7 @@ export const siteConfig = {
   header: {
     logo: {
       src: '/favicon.svg',
-      alt: 'Logo Image',
+      alt: 'A cool rocket',
     },
     navLinks: [
       {
