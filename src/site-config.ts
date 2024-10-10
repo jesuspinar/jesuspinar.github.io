@@ -1,6 +1,6 @@
 export const siteConfig = {
-  author: 'Jesús Pinar',
-  title: 'Jesús Pinar',
+  author: 'Jesus Pinar',
+  title: 'Jesus Pinar',
   subtitle: 'Exploring Software Development',
   description: 'Discover in-depth articles on web development, programming tutorials, and more...',
   email: 'devjesuspinar@gmail.com',
