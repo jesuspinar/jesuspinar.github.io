@@ -2,7 +2,7 @@ import type { ProjectData } from '@/types'
 
 export const projectData: ProjectData = [
   {
-    title: 'NTT DATA',
+    title: 'at NTT DATA',
     projects: [
       {
         text: 'Healthcare Internship Management',
@@ -31,7 +31,7 @@ export const projectData: ProjectData = [
     ],
   },
   {
-    title: 'ECOAT',
+    title: 'at ECOAT',
     projects: [
       {
         text: 'Company Website Development',
