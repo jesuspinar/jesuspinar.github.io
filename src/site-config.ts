@@ -1,8 +1,8 @@
 export const siteConfig = {
-  author: 'jesuspinar',
-  title: 'Personal portfolio',
-  subtitle: '',
-  description: '',
+  author: 'Jesús Pinar',
+  title: 'Jesús Pinar',
+  subtitle: 'Exploring Software Development',
+  description: 'Discover in-depth articles on web development, programming tutorials, and more...',
   email: 'devjesuspinar@gmail.com',
   image: {
     src: 'https://avatars.githubusercontent.com/u/89412063',
@@ -17,7 +17,7 @@ export const siteConfig = {
     },
     {
       text: 'Linkedin',
-      href: '',
+      href: 'https://www.linkedin.com/in/jes%C3%BAs-p-3b801331a',
       icon: 'i-simple-icons-linkedin',
     },
   ],
