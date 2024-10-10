@@ -5,7 +5,7 @@ export const siteConfig = {
   description: 'Discover in-depth articles on web development, programming tutorials, and more...',
   email: 'devjesuspinar@gmail.com',
   image: {
-    src: 'https://avatars.githubusercontent.com/u/89412063',
+    src: '/logo.webp',
     alt: 'A cool rocket',
   },
   socialLinks: [
@@ -23,7 +23,7 @@ export const siteConfig = {
   ],
   header: {
     logo: {
-      src: '/favicon.svg',
+      src: '/logo.webp',
       alt: 'A cool rocket',
     },
     navLinks: [
