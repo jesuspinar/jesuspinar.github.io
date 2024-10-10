@@ -18,10 +18,10 @@ import '@/styles/meteors.css'
 <script>
   function createMeteor() {
     // create a meteor
-    let meteor = document.createElement('div')
+    const meteor = document.createElement('div')
     meteor.setAttribute('class', 'meteor')
-    meteor.style.left = Math.round(Math.random() * window.innerWidth) + 'px'
-    meteor.style.top = Math.round(Math.random() * window.innerHeight) + 'px'
+    meteor.style.left = `${Math.round(Math.random() * window.innerWidth)}px`
+    meteor.style.top = `${Math.round(Math.random() * window.innerHeight)}px`
 
     // append the meteor to a random meteor shower (direction)
     const showers = document.querySelectorAll('.shower')

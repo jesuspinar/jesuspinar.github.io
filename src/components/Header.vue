@@ -140,7 +140,7 @@ function toggleNavDrawer() {
 
 .nav-drawer {
   transform: translateY(-100%);
-  --at-apply: box-border fixed h-screen z-999 left-0 top-0 w-100vw bg-main p-6
-    text-lg flex flex-col gap-5 text-center transition-all;
+  --at-apply: box-border fixed h-screen z-999 left-0 top-0 w-100vw bg-main p-6 text-lg flex flex-col gap-5 text-center
+    transition-all;
 }
 </style>
