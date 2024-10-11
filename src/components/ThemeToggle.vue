@@ -11,5 +11,5 @@ function toggleTheme() {
 </script>
 
 <template>
-  <span :aria-label="isDark ? 'Dark Theme' : 'Light Theme'" nav-link dark:i-ri-moon-line i-ri-sun-line @click="toggleTheme" />
+  <span nav-link dark:i-ri-moon-line i-ri-sun-line @click="toggleTheme" />
 </template>
