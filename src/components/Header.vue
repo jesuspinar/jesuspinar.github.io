@@ -76,7 +76,7 @@ function toggleNavDrawer() {
   >
     <div class="flex items-center w-full sm:w-auto sm:justify-start justify-between">
       <a href="/" mr-6 aria-label="Header Logo Image">
-        <img width="32" height="32" :src="siteConfig.header.logo.src" :alt="siteConfig.header.logo.alt">
+        <img width="45" height="45" :src="siteConfig.header.logo.src" :alt="siteConfig.header.logo.alt">
       </a>
       <nav class="sm:flex hidden flex-wrap gap-x-6 position-initial flex-row">
         <a
@@ -103,7 +103,7 @@ function toggleNavDrawer() {
   <nav class="nav-drawer sm:hidden">
     <div class="flex justify-between items-center w-full">
       <a href="/" mr-6 aria-label="Header Logo Image">
-        <img width="32" height="32" :src="siteConfig.header.logo.src" :alt="siteConfig.header.logo.alt">
+        <img width="45" height="45" :src="siteConfig.header.logo.src" :alt="siteConfig.header.logo.alt">
       </a>
       <i i-ri-close-fill @click="toggleNavDrawer()" />
     </div>
