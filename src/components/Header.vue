@@ -101,10 +101,7 @@ function toggleNavDrawer() {
   </header>
 
   <nav class="nav-drawer sm:hidden">
-    <div class="flex justify-between items-center w-full">
-      <a href="/" mr-6 aria-label="Header Logo Image">
-        <img width="45" height="45" :src="siteConfig.header.logo.src" :alt="siteConfig.header.logo.alt">
-      </a>
+    <div class="flex justify-end items-center w-full">
       <i i-ri-close-fill @click="toggleNavDrawer()" />
     </div>
     <div class="flex flex-col justify-center h-full">
