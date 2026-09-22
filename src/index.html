@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#080b0d">
+  <meta name="description"
+    content="Jesus Pinar — Senior Full Stack Developer based in Spain, experienced with Java, Spring Boot, Angular, React, TypeScript, SQL, Docker, and modern web development.">
+  <title>Jesus Pinar — Senior Full Stack Developer</title>
+  <link
+    href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23080b0d'/%3E%3Cellipse cx='16' cy='16' rx='13' ry='5' fill='none' stroke='%23cbfa87' transform='rotate(-30 16 16)'/%3E%3Ccircle cx='16' cy='16' r='6' fill='%23cbfa87'/%3E%3C/svg%3E"
+    rel="icon" type="image/svg+xml">
+  <link href="./styles.css" rel="stylesheet">
+</head>
+
+<body>
+  <main aria-label="Interactive developer portfolio" id="universe">
+    <div id="scene" aria-label="3D orbital scene. Drag to rotate, scroll to zoom, or choose a section below."></div>
+    <div class="scene-vignette" aria-hidden="true"></div>
+
+    <header class="topbar">
+      <a aria-label="Jesus Pinar home" class="brand" href="#">
+        <span class="brand-orbit" aria-hidden="true">◉</span>
+        <span>JESUS PINAR<span class="brand-light"> / DEV</span></span>
+      </a>
+      <span class="header-note">FULL-STACK DEVELOPER</span>
+      <button data-open="contact" class="text-button">Let’s connect <span aria-hidden="true">↗</span></button>
+    </header>
+
+    <section aria-labelledby="main-title" class="intro">
+      <p class="eyebrow"><span class="tiny-cross">+</span>INTERACTIVE PORTFOLIO</p>
+      <h1 id="main-title">Building software.<br>From <em>front to back.</em></h1>
+      <p class="intro-description">Java, Spring Boot, Angular, React, TypeScript, SQL and more.<br>Explore my
+        experience, skills, and background.</p>
+      <button data-open="projects" class="explore-button">View my experience <span aria-hidden="true">↗</span></button>
+    </section>
+
+    <aside aria-label="Scene information" class="system-note">
+      <span class="live-dot"></span>ORBITAL REPO<br>
+      <span class="muted">04 ORBITS TO EXPLORE</span>
+    </aside>
+
+    <div class="labels" id="labels" aria-label="Portfolio sections"></div>
+    <div class="core-label" id="core-label" aria-hidden="true">
+      <span class="core-cross">+</span>
+      <span>THE MAIN CORE<small>DESIGN · BUILD · SHIP</small></span>
+    </div>
+
+    <div class="scene-status" id="scene-status" role="status">Initializing portfolio<span
+        class="loading-dots">...</span></div>
+
+    <div class="view-controls" aria-label="Scene controls">
+      <button id="toggle-motion" aria-label="Pause orbital motion" title="Pause orbital motion" aria-pressed="false">
+        <svg aria-hidden="true" viewBox="0 0 24 24">
+          <path d="M9 6v12M15 6v12" />
+        </svg>
+      </button>
+      <span></span>
+      <button id="reset-view" aria-label="Reset camera view" title="Reset view">
+        <svg aria-hidden="true" viewBox="0 0 24 24">
+          <path d="M4 10a8 8 0 1 1 1 7M4 4v6h6" />
+        </svg>
+      </button>
+    </div>
+
+    <nav aria-label="Portfolio sections" class="orbital-nav">
+      <span class="nav-caption">EXPLORE</span>
+      <button data-open="profile">
+        <svg aria-hidden="true" viewBox="0 0 24 24" class="nav-icon profile-color" focusable="false">
+          <path d="m12 4 9 16H3Z" />
+        </svg>
+        <span class="nav-label">Profile</span><small>01</small>
+      </button>
+      <button data-open="projects">
+        <svg aria-hidden="true" viewBox="0 0 24 24" class="nav-icon" focusable="false">
+          <path d="m12 3 9 9-9 9-9-9Z" />
+        </svg>
+        <span class="nav-label">Experience</span><small>02</small>
+      </button>
+      <button data-open="skills">
+        <svg aria-hidden="true" viewBox="0 0 24 24" class="nav-icon" focusable="false">
+          <path d="m12 3 2.5 6.5L21 12l-6.5 2.5L12 21l-2.5-6.5L3 12l6.5-2.5Z" />
+        </svg>
+        <span class="nav-label">Skills</span><small>03</small>
+      </button>
+      <button data-open="contact">
+        <svg aria-hidden="true" viewBox="0 0 24 24" class="nav-icon" focusable="false">
+          <circle cx="12" cy="12" r="9" />
+          <circle cx="12" cy="12" r="4.5" />
+        </svg>
+        <span class="nav-label">Contact</span><small>04</small>
+      </button>
+    </nav>
+
+    <footer class="bottom-bar">
+      <span>
+        FULL-STACK DEVELOPER.<br>
+        <span class="muted">CURIOUS ABOUT HOW THINGS WORK.</span>
+      </span>
+      <span class="interaction-hint">
+        <span aria-hidden="true">✥</span> Drag to explore <i></i>
+        Scroll to zoom <i></i>
+        Click to discover
+      </span>
+
+      <a class="coordinates" href="https://github.com/jesuspinar" target="_blank" rel="noopener noreferrer">
+        CHECK OUT GITHUB<br>
+        <span class="muted">PROJECTS & OPEN SOURCE ↗</span>
+      </a>
+    </footer>
+  </main>
+
+  <dialog aria-labelledby="panel-title" id="detail-panel">
+    <div class="panel-top">
+      <span id="panel-coordinate">OBJECT 01 / PROFILE</span>
+      <button id="close-panel" aria-label="Close panel">✕</button>
+    </div>
+    <div id="panel-content"></div>
+    <div class="panel-bottom">
+      <span>PART OF THE SAME STACK</span>
+      <button id="next-object">Next orbit <span aria-hidden="true">↗</span></button>
+    </div>
+  </dialog>
+
+  <script src="./app.js" type="module"></script>
+</body>
+
+</html>
