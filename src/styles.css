@@ -261,14 +261,7 @@ h1 em {
 .object-label:hover,
 .object-label.hovered {
   background: #17231bea;
-  border-color: #c9f88a80
-}
-
-.object-label[data-open=profile] {
-  border-color: #c9f88a45
-}
-
-.object-label[data-open=profile] .object-name {
+  border-color: #c9f88a80;
   color: var(--accent)
 }
 
@@ -348,6 +341,11 @@ h1 em {
   background: #c9f88a12
 }
 
+.orbital-nav button:hover .nav-icon path,
+.orbital-nav button.active .nav-icon path {
+  stroke: var(--accent);
+}
+
 .orbital-nav small {
   font: 9px var(--font-mono);
   color: #627169;
@@ -370,10 +368,6 @@ h1 em {
 .orbital-nav .nav-label,
 .orbital-nav small {
   line-height: 1
-}
-
-.profile-color {
-  color: var(--accent)
 }
 
 .view-controls {
