@@ -561,7 +561,12 @@ function initializeUniverse() {
     label.innerHTML = `
         <span class="object-number">${section.number}</span>
         <span class="object-name">${section.name}</span>
-        <span class="label-arrow" aria-hidden="true">↗</span>
+        <span class="label-arrow" aria-hidden="true">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M3.5 20.5L17 7M9 7H17V15" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+              stroke-linejoin="round" />
+          </svg>
+        </span>
       `;
     document
       .querySelector('#labels')
